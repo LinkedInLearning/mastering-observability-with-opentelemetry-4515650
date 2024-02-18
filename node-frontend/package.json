@@ -1,0 +1,15 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0",
+    "pug": "^3.0.2"
+  }
+}

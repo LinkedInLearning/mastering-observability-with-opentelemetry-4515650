@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-sm-12.text-center
+        h1.mb-6 [Tabs] OR SPACES
+
+        form(method='GET')
+          .row
+            .col-sm-6
+              .card.m-2.p-3
+                .card-body
+                  h1.card-title.text-primary= tabs ? tabs : '☠️'
+                  p.card-text
+                    | Tabs are easier to type and way more efficient!
+                  button.m-6.btn.btn-primary.btn-block.btn-lg(name='choice', value='tabs')
+                    | I ❤️ TABS
+
+            .col-sm-6
+              .card.m-2.p-3
+                .card-body
+                  h1.card-title.text-primary= spaces ? spaces : '☠️'
+                  p.card-text
+                    | Spaces are awesome because they look the same on every system.
+                  button.m-6.btn.btn-primary.btn-block.btn-lg(name='choice', value='spaces')
+                    | I ❤️ SPACES
+
+        // Clear Button Form
+        form(method='GET' action='/' style='margin-top: 20px;')
+          button.btn.btn-danger.btn-lg(type='submit' name='choice' value='clear' style='margin: auto; display: block;')
+            | Clear

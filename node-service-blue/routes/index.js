@@ -18,9 +18,6 @@ router.get("/", async (req, res, next) => {
       // This will delete all documents in the votes collection
       await votes.deleteMany({});
     } else if (req.query.choice) {
-      if (req.query.choice == "tabs") {
-        throw new Error("Something went wrong here!");
-      }
       // Insert a new document with the choice
       await votes.insertOne({ choice: req.query.choice });
     }

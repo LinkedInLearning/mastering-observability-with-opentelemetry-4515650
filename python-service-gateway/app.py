@@ -20,7 +20,7 @@ def index():
 
     # Simulate slowdown on ~30% of the requests
     if random.random() < 0.3:
-        fibonacci(35)  # This will cause a deliberate slowdown
+        # fibonacci(35)  # This will cause a deliberate slowdown
         try:
             response = requests.get(url)
             # Increment or reset the toggle based on its current value

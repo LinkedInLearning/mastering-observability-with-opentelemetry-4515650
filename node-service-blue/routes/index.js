@@ -6,6 +6,14 @@ const { MongoClient } = require("mongodb");
 const uri = "mongodb://localhost";
 const client = new MongoClient(uri);
 
+// Fibonacci function to simulate delay
+function fibonacci(n) {
+  if (n < 2) {
+    return n;
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 /* GET home page. */
 router.get("/", async (req, res, next) => {
   try {
@@ -24,6 +32,10 @@ router.get("/", async (req, res, next) => {
 
     const spaces = await votes.countDocuments({ choice: "spaces" });
     const tabs = await votes.countDocuments({ choice: "tabs" });
+
+    if(Math.random() < 0.5) {
+      fibonacci(35); 
+    }
 
     return res.json({
       spaces,

@@ -9,3 +9,9 @@ pip3 install opentelemetry-instrumentation-flask
 
 # Start Service with OTel Agent
 opentelemetry-instrument --traces_exporter console --metrics_exporter none --logs_exporter none --service_name gateway flask run --port 3001
+
+# Install OTel Exporter
+pip install opentelemetry-exporter-otlp
+
+# Install pyMongo Instrumentation
+pip install opentelemetry-instrumentation-pymongo

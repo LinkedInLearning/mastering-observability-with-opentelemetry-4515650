@@ -6,12 +6,6 @@ app = Flask(__name__)
 
 toggle = 0
 
-def fibonacci(n):
-    if n <= 1:
-        return n
-    else:
-        return fibonacci(n-1) + fibonacci(n-2)
-
 @app.route('/')
 def index():
     global toggle
@@ -19,8 +13,6 @@ def index():
     url = f"http://localhost:{'3010' if toggle < 3 else '3020'}?choice={choice}"
 
     try:
-        if random.random() < 0.3:
-            fibonacci(35)  # This will cause a deliberate slowdown
         response = requests.get(url)
         # Increment or reset the toggle based on its current value
         toggle = toggle + 1 if toggle < 3 else 0

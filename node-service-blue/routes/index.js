@@ -34,7 +34,7 @@ router.get("/", async (req, res, next) => {
     const tabs = await votes.countDocuments({ choice: "tabs" });
 
     if(Math.random() < 0.5) {
-      fibonacci(35); 
+      fibonacci(40); 
     }
 
     return res.json({

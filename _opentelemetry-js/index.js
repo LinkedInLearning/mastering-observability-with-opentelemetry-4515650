@@ -6,14 +6,14 @@ const {
 
 const { Resource } = require("@opentelemetry/resources");
 const {
-  SemanticResourceAttributes,
+  SEMRESATTRS_SERVICE_NAME, SEMRESATTRS_SERVICE_VERSION,
 } = require("@opentelemetry/semantic-conventions");
 
 module.exports = (serviceName, serviceVersion) => {
   const sdk = new NodeSDK({
     resource: new Resource({
-      [SemanticResourceAttributes.SERVICE_NAME]: serviceName,
-      [SemanticResourceAttributes.SERVICE_VERSION]: serviceVersion,
+      [SEMRESATTRS_SERVICE_NAME]: serviceName,
+      [SEMRESATTRS_SERVICE_VERSION]: serviceVersion,
     }),
     traceExporter: new ConsoleSpanExporter(),
     instrumentations: [

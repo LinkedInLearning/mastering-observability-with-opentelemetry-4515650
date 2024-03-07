@@ -6,7 +6,7 @@ const {
 
 const { Resource } = require("@opentelemetry/resources");
 const {
- 
+ SEMRESATTRS_SERVICE_NAME, SEMRESATTRS_SERVICE_VERSION
 } = require("@opentelemetry/semantic-conventions");
 
 module.exports = (serviceName, serviceVersion) => {

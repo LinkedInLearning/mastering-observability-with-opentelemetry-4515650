@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
+from opentelemetry.instrumentation.flask import FlaskInstrumentor
 import requests
 
 app = Flask(__name__)
-
+FlaskInstrumentor().instrument_app(app)
 toggle = 0
 
 @app.route('/')

@@ -1,5 +1,5 @@
 # Start Service with OTel Agent
-opentelemetry-instrument --traces_exporter console --metrics_exporter none --logs_exporter none --service_name service-green flask run --port 3010
+opentelemetry-instrument --traces_exporter otlp --metrics_exporter none --logs_exporter none --service_name service-green flask run --port 3010
 
 # Enable OTel Log Instrumentation
 

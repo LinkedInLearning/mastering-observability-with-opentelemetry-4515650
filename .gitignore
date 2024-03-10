@@ -4,3 +4,4 @@ node_modules
 npm-debug.log
 updateBranches.sh
 otelcol-contrib*
+grafana-collector-config.*

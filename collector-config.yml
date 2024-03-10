@@ -9,6 +9,10 @@ processors:
   batch:
 
 exporters:
+  debug:
+    verbosity: detailed
+    sampling_initial: 1 
+    sampling_thereafter: 5
   otlp/jaeger:
     endpoint: localhost:5317
     tls:
@@ -25,4 +29,4 @@ service:
     traces:
       receivers: [otlp]
       processors: [batch]
-      exporters: [otlp/jaeger]
+      exporters: [otlp/jaeger, debug]

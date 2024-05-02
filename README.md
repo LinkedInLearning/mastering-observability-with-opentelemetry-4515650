@@ -24,6 +24,15 @@ To resolve this issue:
     Add changes to git using this command: git add .
 	Commit changes using this command: git commit -m "some message"
 
+ ### Instructor
+
+Daniel Khan
+
+Technology Lead, Developer, Application Architect
+                 
+
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/daniel-khan?u=104).
+
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 

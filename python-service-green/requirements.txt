@@ -6,8 +6,8 @@ click==8.1.7
 Deprecated==1.2.14
 dnspython==2.6.0
 Flask==3.0.2
-googleapis-common-protos==1.62.0
-grpcio==1.60.1
+googleapis-common-protos==1.70.0
+grpcio==1.71.0
 idna==3.6
 importlib-metadata==6.11.0
 itsdangerous==2.1.2

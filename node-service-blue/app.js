@@ -1,3 +1,7 @@
+// eslint-disable-next-line import/order
+const pkg = require("./package.json");
+require("../_opentelemetry-js")(pkg.name, pkg.version);
+
 const createError = require("http-errors");
 const express = require("express");
 const logger = require("morgan");

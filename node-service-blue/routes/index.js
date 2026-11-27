@@ -1,7 +1,11 @@
 const express = require("express");
+const { trace } = require("@opentelemetry/api");
 
 const router = express.Router();
 const { MongoClient } = require("mongodb");
+const pkg = require("../package.json");
+
+const tracer = trace.getTracer(pkg.name, pkg.version);
 
 const uri = "mongodb://localhost";
 const client = new MongoClient(uri);
@@ -33,13 +37,16 @@ router.get("/", async (req, res, next) => {
     const spaces = await votes.countDocuments({ choice: "spaces" });
     const tabs = await votes.countDocuments({ choice: "tabs" });
 
-    if(Math.random() < 0.5) {
-      fibonacci(40); 
+    if (Math.random() < 0.5) {
+      tracer.startActiveSpan("fibonacci", (span) => {
+        fibonacci(40);
+        span.end();
+      });
     }
 
     return res.json({
       spaces,
-      tabs,
+      tabs
     });
   } catch (err) {
     return next(err);

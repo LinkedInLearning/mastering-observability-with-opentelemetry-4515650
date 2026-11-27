@@ -1,4 +1,5 @@
 const express = require("express");
+const { trace } = require("@opentelemetry/api");
 
 const router = express.Router();
 const { MongoClient } = require("mongodb");
@@ -26,6 +27,8 @@ router.get("/", async (req, res, next) => {
       // This will delete all documents in the votes collection
       await votes.deleteMany({});
     } else if (req.query.choice) {
+      // Tag the current request span so each vote's choice is searchable in traces
+      trace.getActiveSpan()?.setAttribute("vote.choice", req.query.choice);
       // Insert a new document with the choice
       await votes.insertOne({ choice: req.query.choice });
     }
